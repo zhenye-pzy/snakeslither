@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+
+    <style>
+        body {
+            min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background-image: url(./images/snakebg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+        #game-board {
+            background-color: rgb(0, 120, 0);
+            width: 85vmin;
+            height: 85vmin;
+            display: grid;
+            border-radius: 0.5em;
+
+            /* Creating of grids, repeat 21 times with 1fr width */
+            grid-template-rows: repeat(21, 1fr);
+            grid-template-columns: repeat(21, 1fr);
+        }
+
+        .snake {
+            background-color: yellowgreen;
+            /* border: .25vmin solid black; */
+
+        }
+
+        .food {
+            background-color: rgb(180, 0, 0);
+        }
+
+        #configure-box {
+            /* height: 400px;
+            width: 500px; */
+            width: 35vmin;
+            height: 50vmin;
+            opacity: 80%;
+            background-color: white;
+            margin-left: 50px;
+            border-radius: 1.5em;
+            border: 3em;
+            padding: 2em;
+            padding-bottom: 3em;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        #score {
+            color: black;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        #Score-update {
+            color: black;
+        }
+
+        #Game-Speed-Input {
+            margin-left: 40px;
+            background-color: lightgray;
+            height: 2.7em;
+            width: 120px;
+            text-decoration: none;
+            border: none;
+            border-radius: 0.5em;
+        }
+
+        #Speed-InputBtn {
+            text-decoration: none;
+            border: none;
+            padding: 7px 12px;
+            margin-left: 1em;
+            color: white;
+            background-color: #3AB095;
+            border-radius: 0.5em;
+            border-top: 4px solid #3AB095;
+            border-left: 4px solid #3AB095;
+            border-bottom: 4px solid #1C5948;
+            border-right: 4px solid #1C5948;
+        }
+    </style>
+    <script src="../logic/game.js" defer type="module"></script>
+</head>
+
+<body>
+    <div id='game-board'>
+    </div>
+
+
+    <div id="configure-box">
+        <div id="score">
+
+            <div>CHALLENGER: <b id="Name-Input"></b></div>
+            <p>Game Points: <b id="Score-update"></b></p>
+            <div id="Game-SpeedText"> Game Speed: <b id="Game-Speed"></b></div>
+        </div> <!-- Score -->
+        <br>
+        <input id="Game-Speed-Input" type="number" min="8" max="20" placeholder="Game Speed" />
+        <button id="Speed-InputBtn">Update Value</button>
+        <br><br>
+        <div id="stats_display"></div>
+
+    </div> <!-- Configure-box -->
+</body>
+
+</html>
