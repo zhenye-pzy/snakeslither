@@ -1,10 +1,9 @@
-let host = 'http://localhost:8800'
+let host = 'https://snake-slither.herokuapp.com/'
 document.addEventListener('DOMContentLoaded', function () {
     const createIDButton = document.getElementById('generate-session');
     const startButton = document.getElementById('start-button')
 
     var GameId
-
 
     createIDButton.addEventListener('click', function () {
         fetch(`${host}`, { method: 'POST' })

@@ -38,6 +38,7 @@ app.post('/Gamestats', function (req, res) {
 // })
 
 // Start listening to port 8000
-app.listen(8800, function () {
-    console.log('Snake Game listening on Port 8800');
+const port = process.env.PORT
+app.listen(PORT, function () {
+    console.log(`Snake Game listening on Port ${port}`);
 });
